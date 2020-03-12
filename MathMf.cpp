@@ -1,8 +1,8 @@
 /* 
  * Math library
  *
- * This source file is part of the Lithium-Ion Battery Charger Arduino firmware
- * found under http://www.github.com/microfarad-de/Math
+ * This source file can be found under:
+ * http://www.github.com/microfarad-de/Math
  * 
  * Please visit:
  *   http://www.microfarad.de
@@ -24,7 +24,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>. 
  */
 
-#include "Math.h"
+#include "MathMf.h"
 
 
 void FirFilterClass::initialize (int16_t *memory, uint16_t size) {
@@ -61,6 +61,27 @@ int16_t IirFilterClass::process (int16_t input, uint16_t size) {
 
 /*#######################################################################################*/
 
+
+uint32_t HysteresisClass::apply (uint32_t value, int32_t threshold) {
+  int32_t delta = value - lastValue;
+  int8_t sign = sgn (delta);
+  uint32_t result;
+
+  if ( abs (delta) >= threshold || sign == lastSign) {
+    result = value;
+    lastSign = sign;
+    lastValue = value;
+  }
+  else {
+    result = lastValue;
+  }
+
+  return result;
+}
+
+
+/*#######################################################################################*/
+
 uint32_t crcCalc(uint8_t *buf, uint16_t bufSize) {
 
   const uint32_t crcTable[16] = {
@@ -84,7 +105,7 @@ uint32_t crcCalc(uint8_t *buf, uint16_t bufSize) {
 /*#######################################################################################*/
 
 int8_t sgn (int val) {
- if (val < 0) return -1;
- if (val == 0) return 0;
- return 1;
+  if (val < 0) return -1;
+  else         return 1;
 }
+
