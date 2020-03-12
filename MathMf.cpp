@@ -2,7 +2,7 @@
  * Math library
  *
  * This source file can be found under:
- * http://www.github.com/microfarad-de/Math
+ * http://www.github.com/microfarad-de/MathMf
  * 
  * Please visit:
  *   http://www.microfarad.de
