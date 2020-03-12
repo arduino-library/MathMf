@@ -104,8 +104,10 @@ uint32_t crcCalc(uint8_t *buf, uint16_t bufSize) {
 
 /*#######################################################################################*/
 
+
 int8_t sgn (int val) {
   if (val < 0) return -1;
-  else         return 1;
+  if (val == 0) return 0;
+  return 1;
 }
 
