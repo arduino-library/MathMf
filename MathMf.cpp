@@ -109,3 +109,21 @@ int8_t sgn (int val) {
   else         return 1;
 }
 
+
+/*#######################################################################################*/
+
+uint8_t dec2bcdLow (uint8_t value) {
+  while ( value >= 10 ) value -= 10;
+  return value; 
+}
+
+
+uint8_t dec2bcdHigh (uint8_t value) {
+  uint8_t rv = 0;
+  while ( value >= 100) value -= 100;
+  while ( value >= 10 ) {
+    value -= 10;
+    rv++;
+  }
+  return rv; 
+}

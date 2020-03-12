@@ -88,5 +88,19 @@ uint32_t crcCalc(uint8_t *buf, uint16_t bufSize);
 int8_t sgn (int val);
 
 
+/*
+ * Caluclate least significant BCD digit 
+ * out of a 2-digit decimal value
+ */
+uint8_t dec2bcdLow (uint8_t value);
+
+
+/*
+ * Caluclate most significant BCD digit 
+ * out of a 2-digit decimal value
+ */
+uint8_t dec2bcdHigh (uint8_t value);
+
+
 
 #endif // __MATHMF_H
