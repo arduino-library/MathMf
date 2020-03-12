@@ -41,7 +41,7 @@ class FirFilterClass {
     bool initialized = false;
     int16_t *memory;
     uint16_t size;
-    int16_t index;
+    uint16_t index;
 };
 
 
