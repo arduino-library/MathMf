@@ -35,7 +35,7 @@ void FirFilterClass::initialize (int16_t *memory, uint16_t size) {
 }
 
 int16_t FirFilterClass::process (int16_t input) {
-  int16_t i;
+  uint16_t i;
   int32_t output = 0;
   if (!initialized) return 0;
   
