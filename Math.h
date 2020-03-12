@@ -1,8 +1,8 @@
 /* 
  * Math library
  *
- * This source file is part of the Lithium-Ion Battery Charger Arduino firmware
- * found under http://www.github.com/microfarad-de/Math
+ * This source file can be found under:
+ * http://www.github.com/microfarad-de/Math
  * 
  * Please visit:
  *   http://www.microfarad.de
