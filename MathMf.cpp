@@ -1,15 +1,16 @@
-/* 
+/*
  * Math library
  *
  * This source file can be found under:
- * http://www.github.com/microfarad-de/MathMf
- * 
+ * http://www.github.com/arduino-library/MathMf
+ *
  * Please visit:
  *   http://www.microfarad.de
  *   http://www.github.com/microfarad-de
- * 
+ *   http://www.github.com/arduino-library
+ *
  * Copyright (C) 2019 Karim Hraibi (khraibi at gmail.com)
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -21,7 +22,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>. 
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "MathMf.h"
@@ -38,7 +39,7 @@ int16_t FirFilterClass::process (int16_t input) {
   uint16_t i;
   int32_t output = 0;
   if (!initialized) return 0;
-  
+
   memory[index] = input;
   index++;
   if (index >= size) index = 0;
@@ -114,7 +115,7 @@ int8_t sgn (int val) {
 
 uint8_t dec2bcdLow (uint8_t value) {
   while ( value >= 10 ) value -= 10;
-  return value; 
+  return value;
 }
 
 
@@ -125,5 +126,5 @@ uint8_t dec2bcdHigh (uint8_t value) {
     value -= 10;
     rv++;
   }
-  return rv; 
+  return rv;
 }
